@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section>
+        <!--form to fill-->
+        <form action="/ascii-art" method="POST">
+            <fieldset>
+            <legend>ASCII ART</legend>
+            <label for="text">Enter a text</label><br>
+            <textarea id="text" name="text"></textarea><br><br>
+            <select name="banner" id="banner">
+                <option value="standard">standard</option>
+                <option value="shadow">shadow</option>
+                <option value="thinkertoy">thinkertoy</option>
+            </select>
+            <input type="submit" id="submit" name="submit" value="Submit">
+            </fieldset>
+        </form>
+    </section>
+    <pre>{{.}}</pre>
+</body>
+</html>
