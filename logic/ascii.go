@@ -19,7 +19,7 @@ func Generate(text string, filename string) (string, error) {
 		return "", errors.New("file is empty")
 	}
 
-	if len(content) != 856 {
+	if len(content) < 855 {
 		return "", errors.New("file lines incomplete")
 	}
 
