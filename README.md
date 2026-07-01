@@ -1,6 +1,6 @@
 # ASCII Art Web
 
-A web application written in Go that converts user input into ASCII art using different banner styles. The application provides a simple browser interface where users can enter text, choose a banner, and instantly generate ASCII art.
+A web application written in Go that converts user input into ASCII art using different banner styles. It improves the user interface of the ASCII Art Web project by adding responsive CSS styling while preserving the original business logic.
 
 ---
 
@@ -16,209 +16,112 @@ A web application written in Go that converts user input into ASCII art using di
 * Input validation
 * HTTP error handling
 * Clean separation between handlers and business logic
+* CSS styling
+
 
 ---
 
 ## Project Structure
 
-```text
-ascii-art-web/
+```
+ascii-art-web-stylize/
 │
 ├── banner/
-│   ├── standard.txt
-│   ├── shadow.txt
-│   └── thinkertoy.txt
-│
 ├── handler/
-│   └── handler.go
-│
 ├── logic/
-│   └── ascii.go
-│
+├── static/
+│   └── css/
 ├── templates/
-│   └── index.html
-│
 ├── main.go
 ├── go.mod
 └── README.md
 ```
 
----
+## Requirements
 
-## Architecture
+- Go 1.22 or later
+- Git
 
-The application follows a simple layered architecture.
 
-```text
-Browser
-    │
-    ▼
-HTTP Server (main.go)
-    │
-    ▼
-Handlers
-    │
-    ▼
-Business Logic
-    │
-    ▼
-Banner Files
-```
+## Installation
 
-### Responsibilities
-
-**main.go**
-
-* Starts the web server.
-* Registers application routes.
-
-**handler**
-
-Responsible for:
-
-* Receiving HTTP requests.
-* Validating user input.
-* Calling the business logic.
-* Returning HTTP responses.
-
-**logic**
-
-Responsible for:
-
-* Loading banner files.
-* Validating characters.
-* Converting text into ASCII art.
-* Returning the generated output.
-
----
-
-## Routes
-
-### GET /
-
-Displays the home page.
-
-### POST /ascii-art
-
-Receives:
-
-* text
-* banner
-
-Returns the generated ASCII art.
-
----
-
-## Supported Banner Styles
-
-* standard
-* shadow
-* thinkertoy
-
----
-
-## Error Handling
-
-| Status Code | Description                                                      |
-| ----------- | ---------------------------------------------------------------- |
-| 200         | Request completed successfully                                   |
-| 400         | Invalid input (empty text, invalid banner, non-ASCII characters) |
-| 404         | Route not found                                                  |
-| 405         | Invalid HTTP method                                              |
-| 500         | Internal server error                                            |
-
----
-
-## Running the Project
-
-Clone the repository.
+Clone the repository
 
 ```bash
 git clone <repository-url>
 ```
 
-Navigate to the project.
+Enter the project directory
 
 ```bash
 cd ascii-art-web
 ```
 
-Run the application.
+Run the application
 
 ```bash
 go run .
 ```
 
-Open your browser.
+## Usage
 
-```text
+1. Open your browser.
+
+2. Visit
+
 http://localhost:8080
-```
 
----
+3. Enter text.
+
+4. Select a banner.
+
+5. Click Submit.
+
+6. View the generated ASCII art.
+
 
 ## Example
 
 Input
 
-```text
+```
 Hello
 ```
 
 Banner
 
-```text
-shadow
+```
+standard
 ```
 
 Output
 
-```text
-<ASCII Art Output>
+```
+ _   _
+| | | |
+| |_| |
+...
 ```
 
----
+## Error Handling
 
-## Engineering Decisions
+The application returns appropriate HTTP status codes for:
 
-* Reused the ASCII generation logic from the CLI project instead of duplicating code.
-* Separated HTTP handling from business logic.
-* Kept banner loading inside the business logic layer.
-* Used HTML templates for rendering.
-* Implemented HTTP status codes according to REST principles.
+- Empty input
+- Invalid banner
+- Unsupported HTTP methods
+- Invalid routes
+- Non-ASCII characters
+- Internal server errors
 
----
+## Technologies
 
-## Lessons Learned
+- Go
+- HTML
+- CSS
+- net/http
 
-During this project I learned:
-
-* Building HTTP servers in Go.
-* Routing requests.
-* Creating HTTP handlers.
-* Rendering HTML templates.
-* Reusing business logic.
-* Input validation.
-* Debugging file path issues.
-* Returning appropriate HTTP status codes.
-* Organizing Go projects using packages.
-
----
-
-## Future Improvements
-
-* Improve UI styling.
-* Add downloadable ASCII art.
-* Add support for additional fonts.
-* Cache banner files for improved performance.
-* Add automated tests.
-
----
 
 ## Author
 
-**Emmanuel Okonkwo**
-
-Backend Software Engineering Student
-
-Learn2Earn Fellowship
+Emmanuel Okonkwo

@@ -6,7 +6,7 @@
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #f4f4f4;
+    background: #f4f4f4;
     color: #333;
     line-height: 1.6;
 }
@@ -28,58 +28,88 @@ header h1 {
 }
 
 section {
-    margin-bottom: 30px;
+    margin-bottom: 25px;
 }
 
 fieldset {
-    border: 1px solid #ddd;
+    border: none;
+    background: white;
+    padding: 25px;
     border-radius: 10px;
-    padding: 20px;
-    background-color: white;
+    box-shadow: 0 4px 12px rgba(0,0,0,.1);
 }
 
 label {
-    font-weight: bold;
     display: block;
-    margin-bottom: 8px;
+    font-weight: bold;
+    margin-bottom: 10px;
 }
 
 textarea,
 select {
     width: 100%;
     padding: 12px;
+    margin-bottom: 15px;
     border: 1px solid #ccc;
     border-radius: 6px;
     font-size: 1rem;
-    margin-bottom: 15px;
 }
 
 textarea {
     resize: vertical;
-    min-height: 150px;
-}
-
-input[type="submit"] {
-    background-color: #3498db;
-    color: white;
-    border: none;
-    padding: 12px 20px;
-    border-radius: 6px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-input[type="submit"]:hover {
-    background-color: #2980b9;
-}
-
-fieldset {
-    box-shadow: 0 4px 10px rgba(0,0,0,.1);
+    min-height: 180px;
 }
 
 textarea:focus,
 select:focus {
     outline: none;
     border-color: #3498db;
+}
+
+input[type="submit"] {
+    width: 100%;
+    padding: 14px;
+    background: #3498db;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: .3s;
+}
+
+input[type="submit"]:hover {
+    background: #2980b9;
+}
+
+pre {
+    background: #2c3e50;
+    color: #ecf0f1;
+    padding: 20px;
+    border-radius: 10px;
+    overflow-x: auto;
+    font-family: monospace;
+    font-size: 14px;
+}
+
+footer {
+    text-align: center;
+    margin-top: 30px;
+    color: #777;
+}
+
+@media (max-width: 768px) {
+
+    .container {
+        width: 95%;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    textarea {
+        min-height: 120px;
+    }
+
 }
